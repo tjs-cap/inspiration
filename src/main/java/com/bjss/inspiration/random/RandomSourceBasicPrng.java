@@ -1,9 +1,10 @@
 package com.bjss.inspiration.random;
 
 import com.bjss.inspiration.domain.RandomSource;
-import org.springframework.stereotype.Component;
 
 import java.util.Random;
+import org.springframework.stereotype.Component;
+
 
 @Component
 public class RandomSourceBasicPrng implements RandomSource {

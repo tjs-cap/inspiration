@@ -1,14 +1,13 @@
 package com.bjss.inspiration.web;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class DashboardController {
+public final class DashboardController {
 
     @GetMapping(path = "/inspire")
-    public String inspire(){
+    public String inspire() {
         return "dashboard";
     }
 }

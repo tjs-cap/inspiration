@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class QuoteController {
+public final class QuoteController {
 
-    private final Quotes quotes ;
+    private final Quotes quotes;
 
     @Autowired
-    public QuoteController(Quotes quotes) {
+    public QuoteController( final Quotes quotes ) {
         this.quotes = quotes;
     }
 

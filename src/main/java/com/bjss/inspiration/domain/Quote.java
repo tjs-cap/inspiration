@@ -1,9 +1,9 @@
 package com.bjss.inspiration.domain;
 
 public class Quote {
-    private final String text ;
+    private final String text;
 
-    public Quote(String text) {
+    public Quote( final String text ) {
         this.text = text;
     }
 

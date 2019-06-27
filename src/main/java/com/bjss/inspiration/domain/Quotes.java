@@ -29,7 +29,7 @@ public class Quotes {
     };
 
     @Autowired
-    public Quotes(RandomSource randomSource) {
+    public Quotes(final RandomSource randomSource) {
         this.randomSource = randomSource;
     }
 

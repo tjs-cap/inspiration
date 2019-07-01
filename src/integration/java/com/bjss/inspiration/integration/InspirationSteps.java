@@ -1,6 +1,5 @@
 package com.bjss.inspiration.integration;
 
-import com.bjss.inspiration.domain.Quote;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -9,7 +8,7 @@ import org.junit.Ignore;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Ignore
-public class InspirationSteps extends SpringBootCucumberIntegration {
+public class InspirationSteps extends com.bjss.inspiration.integration.SpringBootCucumberIntegration {
 
     @Given("^I select the home page$")
     public void lookingAtHomePage() {

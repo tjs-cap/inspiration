@@ -21,13 +21,13 @@ public abstract class SpringBootCucumberIntegration {
 
     private String path = INSPIRE_ENDPOINT;
     private ResponseEntity<String> homePageHtmlResponse;
-    private ResponseEntity<Quote> quoteResponse;
+    private ResponseEntity<QuoteResponse> quoteResponse;
 
     protected void requestHomePageHtml() {
-        homePageHtmlResponse = restTemplate.getForEntity(getHomePageUri(), String.class);
+        homePageHtmlResponse = restTemplate.getForEntity(getUri(), String.class);
     }
 
-    private String getHomePageUri() {
+    private String getUri() {
         return "http://localhost:" + port + path;
     }
 
@@ -39,11 +39,15 @@ public abstract class SpringBootCucumberIntegration {
         return homePageHtmlResponse.getBody();
     }
 
+    protected void requestQuoteFromApi() {
+        quoteResponse = restTemplate.getForEntity(getUri(), QuoteResponse.class);
+    }
+
     protected int getQuoteStatus() {
         return quoteResponse.getStatusCodeValue();
     }
 
-    protected Quote getQuote() {
+    protected QuoteResponse getQuote() {
         return quoteResponse.getBody();
     }
 

@@ -8,3 +8,9 @@ Feature: Delivers Inspiration
     When I view the content
     Then An HTTP 200 OK is received
     And The page contains "not feeling it, yet"
+
+  Scenario: I can click to be inspired
+    Given I click for inspiration
+    When The inspiration is fetched
+    Then An HTTP 200 OK is received from the Quote API
+    And The quote has valid characters

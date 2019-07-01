@@ -12,13 +12,35 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class InspirationSteps extends SpringBootCucumberIntegration {
 
     @Given("^I select the home page$")
-    public void lookingAtHomePage() throws Throwable {
+    public void lookingAtHomePage() {
         setEndpointPath("/inspire");
     }
 
+    @Given("^I click for inspiration$")
+    public void requestInspirationalQuote() {
+        setEndpointPath("/api/quote");
+    }
+
     @When("^I view the content$")
-    public void fetchHomePageContent() throws Throwable {
+    public void fetchHomePageContent() {
         requestHomePageHtml();
+    }
+
+    @When("^The inspiration is fetched$")
+    public void requestQuote() {
+        requestQuoteFromApi();
+    }
+
+    @Then("^An HTTP 200 OK is received from the Quote API$")
+    public void receivesHttpOkStatusFromQuoteApi() {
+        assertThat(getQuoteStatus()).isEqualTo(200);
+    }
+
+    @Then("^The quote has valid characters$")
+    public void assertQuoteContainsValidCharacters() {
+        String quoteText = getQuote().getText();
+        assertThat(quoteText.length()).isGreaterThanOrEqualTo(5);
+        assertThat(quoteText).containsPattern("[a-z|A-Z|\\s]+");
     }
 
     @Then("^An HTTP 200 OK is received$")
@@ -27,7 +49,7 @@ public class InspirationSteps extends SpringBootCucumberIntegration {
     }
 
     @Then("^The page contains \"([^\"]*)\"$")
-    public void quoteContainsText(String expectedText) throws Throwable {
+    public void quoteContainsText(String expectedText) {
         assertThat(getHomePageContent()).contains(expectedText);
     }
 }

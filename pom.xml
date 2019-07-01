@@ -12,36 +12,68 @@
     <artifactId>inspiration</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>inspiration</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Inspiration Application - a dose of enthusiasm tempered by reality</description>
 
     <properties>
         <java.version>1.8</java.version>
         <checkstyle-maven-plugin.version>3.1.0</checkstyle-maven-plugin.version>
+        <cucumber.version>2.3.1</cucumber.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+
+        <!-- Use Spring Boot as the application framework -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!-- Use Thymeleaf as the server-side html template engine  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!-- Use Spring Boot Actuator to provide health check endpoints -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+
+        <!-- Unit and integration testing utilities for Spring Boot applications -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-checkstyle-plugin -->
+
+        <!-- Use checkstyle housed as a Maven plugin to for static analysis of code quality -->
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-checkstyle-plugin</artifactId>
             <version>3.1.0</version>
+        </dependency>
+
+        <!-- Use Cucumber for Java and JUnit for integration testing. 'annotation style' preferred -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

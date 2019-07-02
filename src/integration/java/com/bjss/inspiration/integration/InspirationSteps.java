@@ -8,7 +8,7 @@ import org.junit.Ignore;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Ignore
-public class InspirationSteps extends com.bjss.inspiration.integration.SpringBootCucumberIntegration {
+public class InspirationSteps extends SpringBootCucumberIntegration {
 
     @Given("^I select the home page$")
     public void lookingAtHomePage() {

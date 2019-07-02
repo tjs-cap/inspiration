@@ -12,6 +12,7 @@ public class RandomSourceBasicPrng implements RandomSource {
 
     @Override
     public int next(int upperLimit) {
-        return basicPrng.nextInt(upperLimit);
+        int nextValue = basicPrng.nextInt(upperLimit);
+        return nextValue;
     }
 }

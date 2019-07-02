@@ -48,13 +48,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Use checkstyle housed as a Maven plugin to for static analysis of code quality -->
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>3.1.0</version>
-        </dependency>
-
         <!-- Use Cucumber for Java and JUnit for integration testing. 'annotation style' preferred -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -83,28 +76,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${checkstyle-maven-plugin.version}</version>
-                <configuration>
-                    <configLocation>checkstyle.xml</configLocation>
-                    <encoding>UTF-8</encoding>
-                    <consoleOutput>true</consoleOutput>
-                    <failsOnError>true</failsOnError>
-                    <linkXRef>false</linkXRef>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>validate</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
             <!-- This pulls in the code in the src/integration/... folders into the build -->
@@ -171,16 +142,5 @@
     </plugins>
     </build>
 
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.0.0</version>
-                <configuration>
-                    <configLocation>checkstyle.xml</configLocation>
-                </configuration>
-            </plugin>
-        </plugins>
-    </reporting>
+
 </project>

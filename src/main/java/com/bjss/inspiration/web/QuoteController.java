@@ -20,4 +20,8 @@ public final class QuoteController {
     public Quote randomQuote() {
         return quotes.selectAtRandom();
     }
+
+    public void finalize() {
+        // should fail Checkstyle linter
+    }
 }

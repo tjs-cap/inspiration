@@ -23,7 +23,7 @@ public class QuotesTest implements RandomSource{
 
     @Test
     public void fetchesDifferentQuotesAtRandom(){
-        stubRandomValue = 0;
+        stubRandomValue = 1;
         Quote quoteA = quotes.selectAtRandom();
 
         stubRandomValue = 1;

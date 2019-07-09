@@ -26,7 +26,7 @@ public class QuotesTest implements RandomSource{
         stubRandomValue = 1;
         Quote quoteA = quotes.selectAtRandom();
 
-        stubRandomValue = 1;
+        stubRandomValue = 2;
         Quote quoteB = quotes.selectAtRandom();
 
         assertThat(quoteA.getText()).isNotEqualTo(quoteB.getText());
